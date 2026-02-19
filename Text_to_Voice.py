@@ -5,6 +5,7 @@ from gtts import gTTS
 
 #Sergio Rodrigo Huapaya Llimper
 
+#Función para guardar el texto en un .txt con la fecha y hora de guardado
 def save_text():
     text = text_area.get('1.0', END)
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -13,6 +14,7 @@ def save_text():
         file.write(text)
     status_label.config(text=f'Texto guardado como {filename}')
 
+#Función para convertir el .txt en .mp3 y ser reproducido
 def text_to_voice():
     files = [f for f in os.listdir() if f.startswith("text_") and f.endswith(".txt")]
     if not files:
@@ -42,7 +44,5 @@ play_button.pack()
 
 status_label = Label(root, text="" , fg="green")
 status_label.pack()
-
-root.mainloop()
 
 root.mainloop()
