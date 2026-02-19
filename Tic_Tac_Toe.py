@@ -20,6 +20,7 @@ def check_winner():
         return True
     return False
 
+#Función clicadora
 def button_click(row, col):
     global player, game_over
     if buttons[row][col]['text'] == '' and not game_over:
@@ -33,7 +34,7 @@ def button_click(row, col):
         else:
             player = 'O' if player == 'X' else 'X'
 
-
+#Función para reiniciar el juego
 def reset_game():
     global player, game_over
     player = 'X'
@@ -62,3 +63,4 @@ reset_button = tk.Button(root, text='Reiniciar Juego', font='normal 15 bold', co
 reset_button.place(relx=0.5, rely=0.9, anchor='center')
 
 root.mainloop()
+
